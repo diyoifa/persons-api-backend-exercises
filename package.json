@@ -1,0 +1,28 @@
+{
+  "name": "exercise3.13",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start":  "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "deploy": "git push heroku main",
+    "build:ui": "@powershell Remove-Item -Recurse -Force build && cd H:/BootCamp-FullStack-Part3/Ejercicios/c/Exercise3.13/client && npm run build && @powershell Copy-Item build -Recurse H:/BootCamp-FullStack-Part3/Ejercicios/c/Exercise3.13/backend",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && npm run deploy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.6.2",
+    "mongoose-unique-validator": "^4.0.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
